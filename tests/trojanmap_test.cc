@@ -195,10 +195,10 @@ TEST(TrojanMapTest, TSP1) {
   std::vector<std::string> gt{"6819019976","1873055993","8566227656","122702233","8566227783","6816180153","7771782316","6820935923","6819019976"}; // Expected order
   std::cout << "GT path length: "  << m.CalculatePathLength(gt) << "miles" << std::endl; // Print the gt path lengths
   bool flag = false;
-  if (gt == result.second[result.second.size()-1]) // clockwise
+  if (!result.second.empty() && gt == result.second.back()) // clockwise
     flag = true;
   std::reverse(gt.begin(),gt.end()); // Reverse the expected order because the counterclockwise result is also correct
-  if (gt == result.second[result.second.size()-1]) 
+  if (!result.second.empty() && gt == result.second.back())
     flag = true;
   
   EXPECT_EQ(flag, true);
@@ -213,10 +213,10 @@ TEST(TrojanMapTest, TSP2) {
   std::vector<std::string> gt{"6819019976","1873055993","8566227656","122702233","8566227783","6816180153","7771782316","6820935923","6819019976"}; // Expected order
   std::cout << "GT path length: "  << m.CalculatePathLength(gt) << "miles" << std::endl; // Print the gt path lengths
   bool flag = false;
-  if (gt == result.second[result.second.size()-1]) // clockwise
+  if (!result.second.empty() && gt == result.second.back()) // clockwise
     flag = true;
   std::reverse(gt.begin(),gt.end()); // Reverse the expected order because the counterclockwise result is also correct
-  if (gt == result.second[result.second.size()-1]) 
+  if (!result.second.empty() && gt == result.second.back())
     flag = true;
   
   EXPECT_EQ(flag, true);
@@ -231,10 +231,10 @@ TEST(TrojanMapTest, TSP3) {
   std::vector<std::string> gt{"6819019976","1873055993","8566227656","122702233","8566227783","6816180153","7771782316","6820935923","6819019976"}; // Expected order
   std::cout << "GT path length: "  << m.CalculatePathLength(gt) << "miles" << std::endl; // Print the gt path lengths
   bool flag = false;
-  if (gt == result.second[result.second.size()-1]) // clockwise
+  if (!result.second.empty() && gt == result.second.back()) // clockwise
     flag = true;
   std::reverse(gt.begin(),gt.end()); // Reverse the expected order because the counterclockwise result is also correct
-  if (gt == result.second[result.second.size()-1]) 
+  if (!result.second.empty() && gt == result.second.back()) 
     flag = true;
   
   EXPECT_EQ(flag, true);
